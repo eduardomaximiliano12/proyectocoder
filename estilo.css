@@ -1,0 +1,375 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Prompt', sans-serif;
+	border-radius: 3px;
+}
+body{
+    background-image: linear-gradient(to bottom, #ffccc9, #ffccc9, #eb86ae, #d366b1, #ad4ebb);
+}
+/*Comienzo grid padre*/
+.contenedor {
+	height: 100%;
+	width: 100%;
+	max-width: 1920px;
+	margin: 5px auto;
+	display: grid;
+	grid-gap: 5px;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(4, auto);
+	grid-template-areas:"header header header"
+						"contenido contenido sidebar"
+						"tarjeta1 tarjeta2 sidebar"
+						"footer footer footer";
+}
+/*Grid a hijos*/
+.contenedor,
+.contenedor .header,
+.contenedor .contenido,
+.contenedor .sidebar,
+.contenedor .footer {
+	/* background: #ffccc9; */
+	padding: 5px;
+	border-radius: 4px;
+}
+/*Inicio Header*/
+.contenedor .header {
+	/* background: #ffccc9;
+	color: #fff; */
+	grid-area: header;
+}	
+/*Inicio nav*/
+header{
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    justify-content: space-between;
+	text-align: center;
+}
+header ul{
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    align-content: flex-end;
+}
+header li{
+    text-decoration: none;
+    display: flex;
+    font-size: 1.5rem;
+    margin: 10px;
+}
+.button{
+	text-decoration: none;
+	padding: 10px 10px;
+	color: rgb(8, 8, 8);
+	background: #ffccc9;
+	box-shadow: 2px 0px 3px 1px #ad4ebb;
+	transition: all 200ms ease-out;
+}
+.button:hover {
+	color: #8f106f;
+	filter: opacity(1.2);
+	transform: scale(1.09);
+}
+
+/*Inicio contenido de index*/
+.contenedor .contenido{
+    grid-area: contenido;
+	text-align: center;
+	font-size: 1rem;
+}
+.promos{
+    width: 100%;
+    height: 90vh;
+    background-image: url(img/ofertasindex.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.promos p{
+    color: rgb(255, 255, 255);
+    font-size: 4rem;
+	transition: all 500ms ease-in-out;
+}
+.promos p:hover{
+	color: #e8f80b;
+	filter: opacity(1.2);
+	transform: scale(1.09);
+}
+/*Inicio contenido de Contacto*/
+.contenido h1{
+	display: flex;
+	flex-direction:initial;
+	justify-content: center;
+}
+.contenido .form{
+display: flex;
+flex-direction: column;
+align-items:center;
+}
+.input[type=text] {
+	padding:5px;
+	margin:5px 0;
+}
+.input[type=mail] {
+	padding:5px;
+	margin:5px 0;
+}
+.input{
+	border: solid 1px #ee82ee;
+	border-radius: 15px;
+	box-shadow: 0px 2px 5px 0px black;
+}
+.inputarea{
+	border: solid 1px #ee82ee;
+	border-radius: 15px;
+	box-shadow: 0px 2px 5px 0px black;
+}
+/*Inicio sidebar*/
+.contenedor .sidebar{
+    grid-column: 3 / 4;
+    display: flex;
+    grid-area: sidebar;
+}
+.contenedor .sidebar{
+	width: 90%;
+	object-fit: cover;
+}
+/*Tarjetas*/
+.contenedor .tarjeta1,
+.contenedor .tarjeta2 {
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 5px;
+	font-size: 2rem;
+	height: 100px;
+	width: 95%;
+}
+/*Areas tarjeta 1 y 2*/
+.contenedor .tarjeta1{
+    grid-area: tarjeta1;
+}
+.contenedor .tarjeta2{
+    grid-area: tarjeta2;
+}
+/*Editando tarjeta1*/
+.contenedor .tarjeta1{
+	color: rgb(0, 0, 0);
+	position: relative;
+	border-radius: 5px;
+	box-shadow: 0px 5px 10px;
+	cursor: pointer;
+	background-image: url(img/tarjeta1-439x100.jpg);
+	background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	overflow: hidden;
+}
+.contenedor .tarjeta1{
+	transition: all 200ms ease-out;
+}
+.contenedor .tarjeta1 a{
+	color: black;
+	text-decoration: none;
+	transition: all 200ms ease-out;
+}
+/*Aplico Hover*/
+.tarjeta1:hover{
+	color: #e8f80b;
+	transform: scale(1.09) ;
+}
+.tarjeta1 a:hover{
+	color: #e8f80b ;
+	transform: scale(1.09);
+}
+/*Editando la tarjeta2*/
+.contenedor .tarjeta2{
+	color: rgb(0, 0, 0);
+	position: relative;
+	border-radius: 5px;
+	box-shadow: 0px 5px 10px;
+	cursor: pointer;
+	background-image: url(img/tarjeta1.jpg);
+	background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	overflow: hidden;
+}
+.contenedor .tarjeta2{
+	transition: all 200ms ease-out;
+}
+.contenedor .tarjeta2 a{
+	color: black;
+	text-decoration: none;
+	transition: all 200ms ease-out;
+}
+/*Aplico Hover*/
+.tarjeta2:hover{
+	color: #e8f80b;
+	transform: scale(1.09)
+}
+.tarjeta2 a:hover{
+	color: #f8620b;
+	transform: scale(1.09)
+}
+
+/*Inicio Footer*/
+.contenedor .footer {
+	color: rgb(12, 11, 11);
+	grid-area: footer;
+}
+.footer{
+    display: flex;
+    flex-direction: row;
+	width: 100%;
+}
+.footer ul{
+	display: flex;
+    margin: 2px;
+    padding: 2px;
+}
+.footer li{
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+	width: 100%;
+	margin: 20px;
+	padding: 20px;
+}
+/*Modifico imagenes del footer (logos wsp, face, ig)*/
+.footer .image1{
+	padding: 0px;
+	margin: 0px 20px 0px 0px;
+}
+.footer .image2{
+	padding: 0px;
+	margin: 0px 20px 0px 0px;
+}
+.footer .image3{
+	padding: 0px;
+	margin: 0px 20px 0px 0px;
+}
+.h5footer{
+	width: 100%;
+	text-align: center;
+	padding: 50px 0px 0px 0px;
+}
+
+/*Inicio css de Galeria*/
+/*Hover para botones del nav*/
+.button{
+	text-decoration: none;
+	padding: 10px 10px;
+	color: rgb(8, 8, 8);
+	background: #ffccc9;
+	box-shadow: 2px 0px 3px 1px #ad4ebb;
+	transition: all 200ms ease-out;
+}
+.button:hover {
+	color: #8f106f;
+	filter: opacity(1.2);
+	transform: scale(1.09);
+}
+/*Tarjetas de galeria*/
+/*Tarjeta 1*/
+.tarjeta1{
+	color: rgb(0, 0, 0);
+	position: relative;
+	border-radius: 5px;
+	box-shadow: 0px 5px 10px;
+	cursor: pointer;
+	background-image: url(img/tarjeta1-439x100.jpg);
+	background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	overflow: hidden;
+}
+.tarjeta1{
+	transition: all 200ms ease-out;
+}
+.tarjeta1 a{
+	color: black;
+	text-decoration: none;
+	transition: all 200ms ease-out;
+}
+/*Tarjeta 2*/
+.tarjeta2{
+	color: rgb(0, 0, 0);
+	position: relative;
+	border-radius: 5px;
+	box-shadow: 0px 5px 10px;
+	cursor: pointer;
+	background-image: url(img/tarjeta1.jpg);
+	background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	overflow: hidden;
+}
+.tarjeta2{
+	transition: all 200ms ease-out;
+}
+.tarjeta2 a{
+	color: black;
+	text-decoration: none;
+	transition: all 200ms ease-out;
+}
+
+
+                                        /*Inicio Media queries*/
+
+@media screen and (max-width: 768px){
+	.contenedor {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-areas:"header header"
+						"contenido contenido"
+						"sidebar sidebar"
+						"tarjeta1 tarjeta2"
+						"footer footer";
+	width: 100vh;
+	}
+	.contenido h1{
+		font-size: 4rem;
+	}
+	.contenedor .sidebar{
+		display: none;
+	}
+}
+/*Media para 425px */
+@media screen and (max-width: 425px){
+	.contenedor {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-areas:"header header"
+						"contenido contenido"
+						"tarjeta1 tarjeta2"
+						"footer footer";
+}
+	/*Alto de la imagen promos del index*/
+	.promos{
+			height: 1160px;
+}
+/*Seccion formulario de Contacto*/
+	.contenido .form{
+		height: 144vh;
+}
+	.contenido .form .inputarea{
+		height: 130vh;
+		width: 80vh;
+	}
+	/*Tamaño del h1*/
+	.contenido h1{
+		font-size: 3rem;
+	}
+	/*Quito sidebar y logo*/
+	.contenedor .sidebar{
+		display: none;
+	}
+	.contenedor .logo{
+		display: none;
+	}
+}
